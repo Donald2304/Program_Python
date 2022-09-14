@@ -100,12 +100,53 @@ def Croupier():
 Perdant = []
 Gagnant = []
 
+
+
 def tableau():
-    global t1, t2, t3, t4, t5, t6, t7, t8, t9, t10
-    global c1, c2, c3, c4, c5, c6, c7, c8, c9, c10
+    global t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, totj
+    if tour == 1:
+        t1 = random.choice(listeCarte)
+        totj = t1
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 2:
+        t2 = random.choice(listeCarte)
+        totj = t1 + t2
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 3:
+        t3 = random.choice(listeCarte)
+        totj = t1 + t2 + t3
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 4:
+        t4 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 5:
+        t5 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4 + t5
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 6:
+        t6 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4 + t5 + t6
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 7:
+        t7 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4 + t5 + t6 + t7
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 8:
+        t8 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 9:
+        t9 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9
+        listeCarte.remove(CarteJoueur) 
+    elif tour == 10:
+        t10 = random.choice(listeCarte)
+        totj = t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9 + t10
+        listeCarte.remove(CarteJoueur) 
     print("        |Carte1||Carte2||Carte3||Carte4||Carte5||Carte6||Carte7||Carte8||Carte9||Carte10||Total|")
-    print("JOUEUR  |",t1,"||",t2,"||",t3,"||",t4,"||",t5,"||",t6,"||",t7,"||",t8,"||",t9,"||",t10,"||     |")
-    print("CROUPIER|",c1,"||",c2,"||",c3,"||",c4,"||",c5,"||",c6,"||",c7,"||",c8,"||",c9,"||",c10,"||     |")
+    print("JOUEUR  |",t1,"||",t2,"||",t3,"||",t4,"||",t5,"||",t6,"||",t7,"||",t8,"||",t9,"||",t10,"||",totj,"|")
+    print("CROUPIER|      ||      ||      ||      ||      ||      ||      ||      ||      ||       ||     |")
     if tour == 1:
         t1 = CarteJoueur
     if tour == 2:
@@ -183,7 +224,7 @@ while a:
     tour += 1
     if tour == 1:
         t1 = CarteJoueur
-    elif tour == 2:
+    elif  tour == 2:
         t2 = CarteJoueur
     elif tour == 3:
         t3 = CarteJoueur
