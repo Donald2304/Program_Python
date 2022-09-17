@@ -23,8 +23,8 @@ class Couleur:
 
 cagnotte = 10
 print("Cagnotte :", cagnotte)
-running = True
-while running:
+
+while True:
     try:
         ChoixCagnotte = int(input("Choix mises : "))
         while ChoixCagnotte > 10 or ChoixCagnotte < 1:
@@ -34,7 +34,7 @@ while running:
             elif ChoixCagnotte < 1:
                 print("Mise trop petite")
                 ChoixCagnotte = int(input("Choix mises : "))
-        running = False
+        break
     except ValueError:
         print("Ce n'est pas un nombre")
 
