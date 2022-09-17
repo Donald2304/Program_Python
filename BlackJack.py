@@ -31,12 +31,9 @@ try:
             ChoixCagnotte = int(input("Choix mises : "))
         elif ChoixCagnotte < 1:
             print("Mise trop petite")
-        try:
             ChoixCagnotte = int(input("Choix mises : "))
         except ValueError:
-            print("Ce nombre n'est pas un entier")
-except ValueError:
-    print("Ce nombre n'est pas un entier")
+            pass
 
 
 
