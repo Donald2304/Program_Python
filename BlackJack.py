@@ -25,20 +25,21 @@ cagnotte = 10
 print("Cagnotte :", cagnotte)
 try:
     ChoixCagnotte = int(input("Choix mises : "))
-except ValueError:
-    print("Ce nombre n'est pas un entier")
-
-
-while ChoixCagnotte > 10 or ChoixCagnotte < 1:
-    if ChoixCagnotte > cagnotte:
-        print('Mises trop élevé')
-        ChoixCagnotte = int(input("Choix mises : "))
-    elif ChoixCagnotte < 1:
-        print("Mise trop petite")
+    while ChoixCagnotte > 10 or ChoixCagnotte < 1:
+        if ChoixCagnotte > cagnotte:
+            print('Mises trop élevé')
+            ChoixCagnotte = int(input("Choix mises : "))
+        elif ChoixCagnotte < 1:
+            print("Mise trop petite")
         try:
             ChoixCagnotte = int(input("Choix mises : "))
         except ValueError:
             print("Ce nombre n'est pas un entier")
+except ValueError:
+    print("Ce nombre n'est pas un entier")
+
+
+
 cagnotte -= ChoixCagnotte
 listeCarte = [2, 2 , 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11]
 a = True
