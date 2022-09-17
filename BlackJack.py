@@ -150,7 +150,7 @@ def tableau():
         totj = t1 + t2 + t3 + t4 + t5 + t6 + t7 + t8 + t9 + t10
         listeCarte.remove(CarteJoueur) 
     print("        |Carte1||Carte2||Carte3||Carte4||Carte5||Carte6||Carte7||Carte8||Carte9||Carte10||Total|")
-    print("JOUEUR  |",t1,"||",t2,"||",t3,"||",t4,"||",t5,"||",t6,"||",t7,"||",t8,"||",t9,"||",t10,"||",totj,"|")
+    print("JOUEUR  |",t1.rjust(6),"||",t2.rjust(6),"||",t3.rjust(6),"||",t4.rjust(6),"||",t5.rjust(6),"||",t6.rjust(6),"||",t7.rjust(6),"||",t8.rjust(6),"||",t9.rjust(6),"||",t10.rjust(7),"||",totj.rjust(5),"|")
     print("CROUPIER|      ||      ||      ||      ||      ||      ||      ||      ||      ||       ||     |")
     if tour == 1:
         t1 = CarteJoueur
