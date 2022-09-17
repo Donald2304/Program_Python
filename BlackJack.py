@@ -32,8 +32,8 @@ try:
         elif ChoixCagnotte < 1:
             print("Mise trop petite")
             ChoixCagnotte = int(input("Choix mises : "))
-        except ValueError:
-            pass
+except ValueError:
+    pass
 
 
 
