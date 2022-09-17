@@ -31,8 +31,9 @@ while ChoixCagnotte > 10 or ChoixCagnotte < 1:
         ChoixCagnotte = int(input("Choix mises : "))
     elif ChoixCagnotte < 1:
         print("Mise trop petite")
-        ChoixCagnotte = int(input("Choix mises : "))
-
+        try:
+            ChoixCagnotte = int(input("Choix mises : "))
+        
 cagnotte -= ChoixCagnotte
 listeCarte = [2, 2 , 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11]
 a = True
