@@ -37,7 +37,7 @@ cagnotte -= ChoixCagnotte
 listeCarte = [2, 2 , 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11]
 a = True
 TotalCroupier = 0
-TotalJoueur = 0
+totj = 0
 b = 1
 t1 = '?'
 t2 = '?'
@@ -68,10 +68,8 @@ CarteJoueur = random.choice(listeCarte)
 listeCarte.remove(CarteJoueur)
 
 
-print('Carte Joueur :',CarteJoueur)
-TotalJoueur += CarteJoueur
-print(Couleur.VertClair + 'Total Joueur :',TotalJoueur,Couleur.Normal) 
 
+totj += CarteJoueur
 
 def Croupier():
     global TotalCroupier
@@ -87,7 +85,7 @@ def Croupier():
         cagnotte == 2 * ChoixCagnotte
         print("Cagnotte Joueur :",cagnotte)
         b = 0
-    if TotalJoueur < 21:
+    if totj < 21:
         if TotalCroupier < 17:
             time.sleep(2)
             CarteCroupier = random.choice(listeCarte)
@@ -173,10 +171,10 @@ def tableau():
 
 
 def Joueur():
-    global TotalJoueur
+    global totj
     global cagnotte
     global b
-    if TotalJoueur > 21 and b == 1:
+    if totj > 21 and b == 1:
         time.sleep(2)
         print('Croupier Gagne')
         cagnotte -= ChoixCagnotte
@@ -184,7 +182,7 @@ def Joueur():
         b = 0
 
     
-    elif TotalJoueur == 21 and b == 1:
+    elif totj == 21 and b == 1:
         time.sleep(2)
         print("Joueur Gagne")
         cagnotte += 2 * ChoixCagnotte
@@ -192,30 +190,27 @@ def Joueur():
         b = 0
 
 
-    if TotalJoueur < 21:
+    if totj < 21:
         if TotalCroupier < 21:
             print('')
             time.sleep(2)
             Choix = input("Distribuer ou rester : ")
             if Choix == 'd':
-                CarteJoueur = random.choice(listeCarte) 
-                listeCarte.remove(CarteJoueur) 
+                tableau()
                 print('Carte Joueur :',CarteJoueur)
-                TotalJoueur += CarteJoueur
-                print(Couleur.VertClair + "Total Joueur :",TotalJoueur) 
             elif Choix == 'r':
                 global a
                 a = False
                 while TotalCroupier < 17:
                     Croupier()
-                if TotalCroupier < 22 and TotalJoueur < 22 and TotalCroupier == TotalJoueur:
+                if TotalCroupier < 22 and totj < 22 and TotalCroupier == totj:
                     print("Egalite")
                     print("Cagnotte Joueur :",cagnotte)
-                elif TotalCroupier > TotalJoueur and TotalCroupier < 22:
+                elif TotalCroupier > totj and TotalCroupier < 22:
                     print('Gagnant : Croupier')
                     cagnotte -= ChoixCagnotte
                     print("Cagnotte Joueur :",cagnotte)
-                elif TotalCroupier < TotalJoueur and TotalJoueur < 22:
+                elif TotalCroupier < totj and totj < 22:
                     print('Gagnant : Joueur')
                     cagnotte += 2 * ChoixCagnotte
                     print("Cagnotte Joueur :",cagnotte)
