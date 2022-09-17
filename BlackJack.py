@@ -23,7 +23,8 @@ class Couleur:
 
 cagnotte = 10
 print("Cagnotte :", cagnotte)
-while True:
+running = True
+while running:
     try:
         ChoixCagnotte = int(input("Choix mises : "))
         while ChoixCagnotte > 10 or ChoixCagnotte < 1:
