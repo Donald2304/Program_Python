@@ -34,6 +34,7 @@ while running:
             elif ChoixCagnotte < 1:
                 print("Mise trop petite")
                 ChoixCagnotte = int(input("Choix mises : "))
+        running = False
     except ValueError:
         print("Ce n'est pas un nombre")
 
