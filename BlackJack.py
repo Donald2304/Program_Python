@@ -1,4 +1,22 @@
 import random
+class Couleur:
+    Bleu = '\033[94m' 
+    Rouge = '\033[91m' 
+    Normal = '\033[0m'
+    Violet = '\033[95m'
+    Blanc = '\033[97m' 
+
+    Noire = '\033[30m'
+    Vert = '\033[32m'
+    Orange = '\033[33m'
+    Cyan = '\033[36m'
+    Gris = '\033[90m'
+    RougeClair = '\033[91m'
+    VertClair = '\033[92m'
+    Jaune = '\033[93m'
+    Rose = '\033[95m'
+    CyanClair = '\033[96m'
+
 class BlackJack:
     """
         Represente un jeu BlackJack.
@@ -104,8 +122,8 @@ class BlackJack:
                 break
 
     def afficheTableauDesCartes(self):
-        print("Joueur :", self.tiragesJoueur, "Total :", sum(self.tiragesJoueur))
-        print("Croupier :", self.tiragesCroupier, "Total :", sum(self.tiragesCroupier))
+        print(Couleur.Bleu + "Joueur :  ", self.tiragesJoueur, "Total :", sum(self.tiragesJoueur), Couleur.Normal)
+        print(Couleur.Rouge + "Croupier :", self.tiragesCroupier, "Total :", sum(self.tiragesCroupier), Couleur.Normal)
 
     def quiAGagne(self):
         if sum(self.tiragesJoueur) > 21:
@@ -127,10 +145,13 @@ class BlackJack:
             self.choixCagnotte *= 2
             self.cagnotte += self.choixCagnotte 
             print("Le joueur a gagné", self.cagnotte - self.choixCagnotte, "€")
+            print("La cagnotte est de",self.cagnotte, "€")
         elif self.quiAGagne() == "c":
             print("Le joueur a perdu", self.choixCagnotte, "€")
+            print("La cagnotte est de",self.cagnotte, "€")
         else:
             print("Pas de gagnant")
+            print("La cagnotte est de",self.cagnotte, "€")
 
     def tirerCarte(self, qui):
         if qui == 'j':
