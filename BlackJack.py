@@ -116,9 +116,8 @@ class BlackJack:
             return "j"
         elif sum(self.tiragesCroupier) == 21:
             return "c"
-        elif sum(self.tiragesCroupier) > sum(self.tiragesJoueur) and sum(self.tiragesCroupier) < 21 and sum(self.tiragesJoueur) != 21:
+        elif sum(self.tiragesJoueur) < sum(self.tiragesCroupier) <= 21:
             return "c"
-
         else:
             return ""
 
