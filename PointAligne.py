@@ -13,8 +13,8 @@ class Couleur:
 PasseOrdonneA = 0
 while PasseOrdonneA == 0 :
     try:
-        PointAa = int(input("A(?, ): ")) 
-        if PointAa == int(PointAa):
+        PointAa = float(input("A(?, ): ")) 
+        if PointAa == float(PointAa):
             PasseOrdonneA = 1
     except ValueError:
         print(Couleur.Rouge + 'IL FAUT ENTRER UN NUMERO' + Couleur.Normal)
@@ -22,8 +22,8 @@ while PasseOrdonneA == 0 :
 PasseAbscisseB = 0
 while PasseAbscisseB == 0:
     try:
-        PointAo = int(input('A(' + str(PointAa) +';?)'))
-        if PointAo == int(PointAo):
+        PointAo = float(input('A(' + str(PointAa) +';?)'))
+        if PointAo == float(PointAo):
             PasseAbscisseB = 1
     except ValueError:
         print(Couleur.Rouge + "IL FAUT UN NUMERO" + Couleur.Normal)
@@ -35,8 +35,8 @@ PasseOrdonneB = 0
 print('')
 while PasseOrdonneB == 0:
     try:
-        PointBa = int(input('B(?; )'))
-        if PointBa == int(PointBa):
+        PointBa = float(input('B(?; )'))
+        if PointBa == float(PointBa):
             PasseOrdonneB = 1
     except ValueError:
         print(Couleur.Rouge + 'IL FAUT UN NUMERO' + Couleur.Normal)
@@ -44,8 +44,8 @@ while PasseOrdonneB == 0:
 PasseAbscisseC = 0
 while PasseAbscisseC == 0:
     try:
-        PointBo = int(input('B(' + str(PointBa) +';?)'))
-        if PointBo == int(PointBo):
+        PointBo = float(input('B(' + str(PointBa) +';?)'))
+        if PointBo == float(PointBo):
             PasseAbscisseC = 1
     except ValueError:
         print(Couleur.Rouge + "IL FAUT UN NUMERO" + Couleur.Normal)
@@ -57,8 +57,8 @@ PasseOrdonneC = 0
 print('')
 while PasseOrdonneC == 0:
     try:
-        PointCa = int(input('C(?; )'))
-        if PointCa == int(PointCa):
+        PointCa = float(input('C(?; )'))
+        if PointCa == float(PointCa):
             PasseOrdonneC = 1
     except ValueError:
         print(Couleur.Rouge + 'IL FAUT UN NUMERO' + Couleur.Normal)
@@ -66,8 +66,8 @@ while PasseOrdonneC == 0:
 PasseFIN = 0
 while PasseFIN == 0:
     try:
-        PointCo = int(input('C(' + str(PointCa) +';?)'))
-        if PointCo == int(PointCo):
+        PointCo = float(input('C(' + str(PointCa) +';?)'))
+        if PointCo == float(PointCo):
             PasseFIN = 1
     except ValueError:
         print(Couleur.Rouge + "IL FAUT UN NUMERO" + Couleur.Normal)
