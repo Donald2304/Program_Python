@@ -13,19 +13,12 @@ print("ax + b = 0")
 print(str(ax)+"x", "+("+ str(b) + ") = 0")
 print(str(ax) + "x =", -b)
 
-while Passe == None:
-    try:
-        reponseJoueur = float(input("x = "))
-        Passe = 1
-    except ValueError:
-        ...
-
 try:
     for a in liste:
         if b % a == 0 and ax % a == 0:
             reductions.append(a)
     b = b / max(reductions)
     ax = ax / max(reductions)
-    print("x =", -b,"/",-ax)
+    print("x =", -b,"/",ax)
 except ZeroDivisionError:
-    print("x =",-b + "/",-ax)
+    print("x =",-b + "/",ax)
