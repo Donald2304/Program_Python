@@ -2,8 +2,12 @@ import random
 afficheResultatN = 0
 afficheResultatD = 0
 afficheResultat = 0
+reductionUser = []
+reductionOrdinateur = []
 listeChiffres = list(range(-10, 10 + 1))
 listeChiffres.remove(0)
+userRepNumerateur2 = 0
+userRepDenominateur2 = 0
 
 print("ax + b = cx + d")
 print("x(a-c) = d - b")
@@ -38,12 +42,24 @@ while afficheResultat == 0:
                 print("Ce n'est pas un nombre")
 print("Votre reponse : x = " + str(userRepNumerateur) + " / " + str(userRepDenominateur))
 
+
+
 if d-b == userRepNumerateur and ax-c == userRepDenominateur:
     print("Votre reponse est juste")
+
 else:
+    for a in listeChiffres:
+        if (d-b) % a == 0 and (ax-c) % a == 0:
+            reductionOrdinateur.append(a)
+    repN = d-b
+    repN /= max(reductionOrdinateur)
+    repD = ax-c
+    repD /= max(reductionOrdinateur)
+
     print("")
     print("Faux la reponse est:")
+    print(str(ax)+"x", '+('+str(b)+')','=', str(c)+"x",'+('+str(d)+')')
     print(str(ax-c)+"x","=",str(d-b))
-    print("x =",str(d-b)+"/"+str(ax-c))
+    print("x =",str(repN)+"/"+str(repD))
 
 
