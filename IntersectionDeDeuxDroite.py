@@ -13,4 +13,8 @@ b = random.choice(listeChiffres)
 c = random.choice(listeChiffres)
 d = random.choice(listeChiffres)
 
-print(str(ax), '+('+str(b)+')','=', str(c),'+('+str(d)+')')
+userRepNumerateur = input("")# try , except jusqua ce que la reponse donne soit un chiffres ou un nombre
+
+print(str(ax)+"x", '+('+str(b)+')','=', str(c)+"x",'+('+str(d)+')')
+print(str(ax-c)+"x","=",str(d-b))
+print("x =",str(d-b)+"/"+str(ax-c))
