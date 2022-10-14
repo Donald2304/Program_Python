@@ -1,10 +1,10 @@
 import time
 
-def Espace():
+def Espace(pause,Inferieur):
     espace2 = ""
     nbEspace2 = 0
-    time.sleep(7)
-    while nbEspace2 < 100:
+    time.sleep(pause)
+    while nbEspace2 < Inferieur:
         print("")
         espace2 += " "
         nbEspace2 += 1
@@ -144,13 +144,7 @@ tourPersonnage = 0
 while tourPersonnage < 8:
     tourPersonnage += 1
     if b == 0:
-        espace2 = ""
-        nbEspace2 = 0
-        time.sleep(0.4)
-        while nbEspace2 < 100:
-            print("")
-            espace2 += " "        
-            nbEspace2 += 1
+        Espace(0.4, 100)
         print(" O/")
         print("/| <- Sa c'est vous")
         print("/ \ ")
@@ -158,62 +152,29 @@ while tourPersonnage < 8:
         b = 1
 
     if b == 1:
-        espace2 = ""
-        nbEspace2 = 0
-        time.sleep(0.4)
-        while nbEspace2 < 100:
-            print("")
-            espace2 += " "
-            nbEspace2 += 1
+        Espace(0.4, 100)
         print(" O__")
         print("/| <- Sa c'est vous")
         print("/ \ ")     
         b = 0
 
 # Gagne cagnotte
-espace2 = ""
-nbEspace2 = 0
-while nbEspace2 < 100:
-    print("")
-    espace2 += " "
-    nbEspace2 += 1
-
+Espace(0, 100)
 print(" O")
 print("/|\ Votre but est d'avoir une bonne vie")
 print("/ \ ")
 
-espace2 = ""
-nbEspace2 = 0
-time.sleep(7)
-while nbEspace2 < 100:
-    print("")
-    espace2 += " "
-    nbEspace2 += 1
-
+Espace(5, 100)
 print(" O")
 print("/|\ Votre premiere mission est de gagner de l'argent")
 print("/ \ ")
 
-espace2 = ""
-nbEspace2 = 0
-time.sleep(7)
-while nbEspace2 < 100:
-    print("")
-    espace2 += " "
-    nbEspace2 += 1
-
+Espace(5, 100)
 print(" O")
 print("/|\ Pour cela un quiz de question determinera votre capitale de depart")
 print("/ \ ")
 
-espace2 = ""
-nbEspace2 = 0
-time.sleep(7)
-while nbEspace2 < 100:
-    print("")
-    espace2 += " "
-    nbEspace2 += 1
-
+Espace(5, 100)
 print(" O")
-print("/|\ Pour cela un quiz de question determinera votre capitale de depart")
+print("/|\ Pour cela un quizz de question determinera votre capitale de depart")
 print("/ \ ")
