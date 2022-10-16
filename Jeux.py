@@ -1,6 +1,7 @@
+
 import time,random
-listeCalcule = list(range(-50, 50))
-listeAleatoire = [1, 2 + 1]
+listeCalcule = list(range(-50 , 50+1))
+cagnotte = 0
 
 def Espace(pause,Inferieur):
     espace2 = ""
@@ -14,26 +15,21 @@ def Espace(pause,Inferieur):
 def AfficheCagnotte():
     print("Vous avez " + str(cagnotte) + "€")
 
-def CalculeAdditionSoustraction():
-    Nombre1 = random.choice(listeCalcule)
-    Nombre2 = random.choice(listeCalcule)
-    ChoixCalcule = random.choice(listeAleatoire)
-    if ChoixCalcule == 1:
-        print(Nombre1, "-(" + str(Nombre2) + ")")
-    elif ChoixCalcule == 2:
-        print(Nombre1, "+(" + str(Nombre2) + ")")
+def Calcule():
+    global cagnotte
+    nombre1 = random.choice(listeCalcule)
+    nombre2 = random.choice(listeAleatoire)
+    print(nombre1, "+", nombre2)
+    reponseOrdinateur = nombre1 + nombre2
     reponse = input("Reponse = ")
-    if ChoixCalcule == 1:
-        if reponse == Nombre1-Nombre2:
-            cagnotte += 50
-            AfficheCagnotte()
-            Espace(5, 100)
-    elif ChoixCalcule == 2:
-        if reponse == Nombre1 + Nombre2:
-            cagnotte += 50
-            AfficheCagnotte()
-            Espace(5,100)
-
+    if int(reponse) == reponseOrdinateur:
+        print("Juste")
+        cagnotte += 100
+        Espace(3, 100)
+        AfficheCagnotte()
+    elif int(reponse) != reponseOrdinateur:
+        print("Faux")
+    
 class Couleur:
     Bleu = '\033[94m' 
     Rouge = '\033[91m' 
@@ -107,8 +103,8 @@ while Suite == 0:
             Lancement += 1
         Lancement = 0
 
-        print(espace + Couleur.Vert +"   _______")
-        print(espace +                "  / || || \ ")
+        print(espace + Couleur.Vert + "   _______")
+        print(espace +                "  / || || \__")
         print(espace +                "   O---------O" + Couleur.Normal)
         print(Couleur.Jaune + "----------------------"+barre) 
 
@@ -200,7 +196,6 @@ print("/|\ Pour cela un quizz de question determinera votre capitale de depart")
 print("/ \ ")
 
 # Debut du quizz
-cagnotte = 0
 
 Espace(6, 100)
 print("C'est partit :)")
@@ -222,13 +217,5 @@ else:
     AfficheCagnotte()
     Espace(3, 100)
 
-
-
-
-
-
-
-
-
-
+Calcule()
 
