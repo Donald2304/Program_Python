@@ -1,6 +1,32 @@
 import time,random
+class Couleur:
+    Bleu = '\033[94m' 
+    Rouge = '\033[91m' 
+    Normal = '\033[0m'
+    Violet = '\033[95m'
+    Blanc = '\033[97m' 
+    Noire = '\033[30m'
+    Vert = '\033[32m'
+    Orange = '\033[33m'
+    Cyan = '\033[36m'
+    Gris = '\033[90m'               # Utiliser
+    RougeClair = '\033[91m'
+    VertClair = '\033[92m'
+    Jaune = '\033[93m'              # Utiliser
+    Rose = '\033[95m'
+    CyanClair = '\033[96m'
+
+
 listeCalcule = list(range(-50 , 50+1))
 cagnotte = 0
+suite = 0
+
+# Variable competences
+Calculator = 0
+Mineur = 0
+Constructeur = 0
+Programmeur = 0
+
 
 def Espace(pause,Inferieur):
     espace2 = ""
@@ -14,31 +40,6 @@ def Espace(pause,Inferieur):
 def AfficheCagnotte():
     print("Vous avez " + str(cagnotte) + "€")
 
-def Calcule():
-    global cagnotte
-    nbCalculeOK = 0
-    nombre1 = random.choice(listeCalcule)
-    nombre2 = random.choice(listeCalcule)
-    print(nombre1, "+", nombre2)
-    reponseOrdinateur = nombre1 + nombre2
-    while nbCalculeOK == 0:
-        try:
-            reponse = int(input("Reponse = "))
-            if reponse == int(reponse):
-                nbCalculeOK = 1
-        except ValueError:
-            ...
-    if int(reponse) == reponseOrdinateur:
-        print(Couleur.Vert + "Juste, vous gagner 50€." + Couleur.Normal)
-        cagnotte += 50
-        Espace(3, 100)
-        AfficheCagnotte()
-        Espace(3, 100)
-    elif int(reponse) != reponseOrdinateur:
-        print(Couleur.Rouge + "Faux, vous ne gagnez rien." + Couleur.Normal)
-        Espace(3, 100)
-        AfficheCagnotte()
-        Espace(3, 100)
 
 def PremiereOrdinateur():
     print("Prix : 150€")
@@ -60,22 +61,64 @@ def PuissantOrdinateur():
     print(Couleur.Vert +  "  |____| 0  ", Couleur.Rouge + "|_|")
 
 
-class Couleur:
-    Bleu = '\033[94m' 
-    Rouge = '\033[91m' 
-    Normal = '\033[0m'
-    Violet = '\033[95m'
-    Blanc = '\033[97m' 
-    Noire = '\033[30m'
-    Vert = '\033[32m'
-    Orange = '\033[33m'
-    Cyan = '\033[36m'
-    Gris = '\033[90m'               # Utiliser
-    RougeClair = '\033[91m'
-    VertClair = '\033[92m'
-    Jaune = '\033[93m'              # Utiliser
-    Rose = '\033[95m'
-    CyanClair = '\033[96m'
+
+# Creation fonctions des menus
+def MenuPrincipal():
+    global suite
+    Espace(0, 100)
+    print("Menu :",Couleur.Jaune +" PRINCIPAL" + Couleur.Normal)
+    print("Aller sur l'ordinateur (o)")
+    print("Faire des calculs (c)")
+    print("Voir competences (l)")
+    while suite == 0:
+        try:
+            reponse = str(input("Aller dans l'onglet : "))
+            if reponse == str(reponse):
+                if str(reponse) == "o":
+                    suite = 1
+                    choixOnglet = "ordinateur"
+                
+                elif str(reponse) == "c":
+                    suite = 1
+                    choixOnglet = "calcul"
+
+                elif str(reponse) == "l":
+                    suite = 1
+                    choixOnglet = "competence"                    
+        except SyntaxError:
+            ...
+
+def Calcule():
+    gain = 0
+    while gain != 300:
+        global cagnotte
+        nbCalculeOK = 0
+        nombre1 = random.choice(listeCalcule)
+        nombre2 = random.choice(listeCalcule)
+        print(nombre1, "+", nombre2)
+        reponseOrdinateur = nombre1 + nombre2
+        while nbCalculeOK == 0:
+            try:
+                reponse = int(input("Reponse = "))
+                if reponse == int(reponse):
+                    nbCalculeOK = 1
+                    gain += 50
+            except ValueError:
+                ...
+        if int(reponse) == reponseOrdinateur:
+            print(Couleur.Vert + "Juste, vous gagner 50€." + Couleur.Normal)
+            cagnotte += 50
+            Espace(3, 100)
+            AfficheCagnotte()
+            Espace(3, 100)
+        elif int(reponse) != reponseOrdinateur:
+            print(Couleur.Rouge + "Faux, vous ne gagnez rien." + Couleur.Normal)
+            Espace(3, 100)
+            AfficheCagnotte()
+            Espace(3, 100)
+
+
+
 
 # Pour animation du debut
 
