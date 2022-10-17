@@ -17,18 +17,30 @@ def AfficheCagnotte():
 
 def Calcule():
     global cagnotte
+    nbCalculeOK = 0
     nombre1 = random.choice(listeCalcule)
-    nombre2 = random.choice(listeAleatoire)
+    nombre2 = random.choice(listeCalcule)
     print(nombre1, "+", nombre2)
     reponseOrdinateur = nombre1 + nombre2
-    reponse = input("Reponse = ")
+    while nbCalculeOK == 0:
+        try:
+            reponse = int(input("Reponse = "))
+            if reponse == int(reponse):
+                nbCalculeOK = 1
+        except ValueError:
+            ...
+
     if int(reponse) == reponseOrdinateur:
-        print("Juste")
-        cagnotte += 100
+        print(Couleur.Vert + "Juste, vous gagner 500€." + Couleur.Normal)
+        cagnotte += 500
         Espace(3, 100)
         AfficheCagnotte()
+        Espace(3, 100)
     elif int(reponse) != reponseOrdinateur:
-        print("Faux")
+        print(Couleur.Rouge + "Faux, vous ne gagnez rien." + Couleur.Normal)
+        Espace(3, 100)
+        AfficheCagnotte()
+        Espace(3, 100)
     
 class Couleur:
     Bleu = '\033[94m' 
@@ -217,5 +229,12 @@ else:
     AfficheCagnotte()
     Espace(3, 100)
 
-Calcule()
+# Jeux
+nbQuestion = 0
+while cagnotte < 2000:
+    Calcule()
+    nbQuestion += 1
+
+
+
 
