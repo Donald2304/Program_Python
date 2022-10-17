@@ -64,8 +64,8 @@ def PuissantOrdinateur():
 
 # Creation fonctions des menus
 def MenuPrincipal():
-    Espace(0, 100)
     if choixOnglet == "principale":
+        Espace(0, 100)
         global suite
         Espace(0, 100)
         print("Menu :",Couleur.Jaune +" PRINCIPAL" + Couleur.Normal)
@@ -89,10 +89,11 @@ def MenuPrincipal():
                         choixOnglet = "competence"                    
             except SyntaxError:
                 ...
+    suite = 0
 
 def Calcule():
-    Espace(0, 100)
     if choixOnglet == "calcul":
+        Espace(0, 100)
         gain = 0
         while gain != 300:
             global cagnotte
@@ -120,21 +121,23 @@ def Calcule():
                 Espace(2, 100)
                 AfficheCagnotte()
                 Espace(2, 100)
+    suite = 0
 
 
 def Competence(): 
-    Espace(0, 100)  
     if choixOnglet == "competence":    
+        Espace(0, 100)
         print("Menu",Couleur.Jaune + "COMPETENCE" + Couleur.Normal)
         print("Calculer Lvl",Calculator)
         print("Mineur Lvl", Mineur)
         print("Constructeur Lvl", Constructeur)
         print("Programmeur Lvl", Programmeur)
+        Suite = 0
 
 
 def Ordinateur():
-    Espace(0, 100)
     if choixOnglet == "ordinateur":
+        Espace(0, 100)
         print("Menu", Couleur.Jaune + "Ordinateur")
         print("BTC (b)")
         print("Acheter objet (a)")
@@ -161,11 +164,11 @@ def Ordinateur():
                         suite = 1
         except SyntaxError:
             ...
-
+    suite = 0
 
 def BTC():
-    Espace(0, 100)
     if choixOnglet == "btc":
+        Espace(0, 100)
         print("Menu", Couleur.Jaune + "BTC")
         print("Miner BTC (m)")
         print("Acheter BTC (a)")
@@ -182,22 +185,22 @@ def BTC():
 
         except SyntaxError:
             ...
-
+    suite = 0
 
 def minerBTC():
-    Espace(0, 100)
     if choixOnglet == "miner BTC": 
+        Espace(0, 100)
         print("Minage en cours...")
         Espace(4, 100)
         print("Vous avez gagné 16€")
         cagnotte += 16
         Espace(2, 100)
         AfficheCagnotte()
-
+    suite = 0
 
 def AcheterBTC():
-    Espace(0, 100)
     if choixOnglet == "acheter BTC": 
+        Espace(0, 100)
         try:
             while suite == 0:
                 reponse = int("Pour combien d'euros voulez vous achetez : ")
@@ -207,8 +210,42 @@ def AcheterBTC():
                         Espace(3, 100)
                         print("Vous avez acheter", str(reponse) + "€ de Bitcoin.")
                         AfficheCagnotte()
+                        suite = 1
         except ValueError:
             ...
+    suite = 0 
+
+
+
+def Shop():
+    if choixOnglet == "shopObjet":
+        Espace(0, 100) 
+        print("Menu", Couleur.Jaune + "SHOP")
+        print("Ordinateur (o)")
+        print("Maison (m)")
+        print("Voiture (v)")
+        print("Bateau (b)")
+        try:
+            while suite == 0:
+                reponse = str(input("Aller dans l'onglet : "))
+                if reponse == str(reponse):
+                    if str(reponse) == "o":
+                        choixOnglet = "ShopOrdinateur"
+                        suite = 1 
+                    elif str(reponse) == "m":
+                        choixOnglet = "maison"
+                        suite = 1
+                    elif str(reponse) == "v":
+                        choixOnglet = "voiture"
+                        suite = 1
+                    elif str(reponse) == "b":
+                        choixOnglet = "bateau"
+                        suite = 1
+        except SyntaxError:
+            ...
+    suite = 0
+
+
 # Pour animation du debut
 
 Debut = 0
