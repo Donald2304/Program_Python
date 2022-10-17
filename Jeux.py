@@ -20,7 +20,7 @@ class Couleur:
 listeCalcule = list(range(-50 , 50+1))
 cagnotte = 0
 suite = 0
-
+choixOnglet = "principal"
 # Variable competences
 Calculator = 0
 Mineur = 0
@@ -64,62 +64,119 @@ def PuissantOrdinateur():
 
 # Creation fonctions des menus
 def MenuPrincipal():
-    global suite
-    Espace(0, 100)
-    print("Menu :",Couleur.Jaune +" PRINCIPAL" + Couleur.Normal)
-    print("Aller sur l'ordinateur (o)")
-    print("Faire des calculs (c)")
-    print("Voir competences (l)")
-    while suite == 0:
-        try:
-            reponse = str(input("Aller dans l'onglet : "))
-            if reponse == str(reponse):
-                if str(reponse) == "o":
-                    suite = 1
-                    choixOnglet = "ordinateur"
-                
-                elif str(reponse) == "c":
-                    suite = 1
-                    choixOnglet = "calcul"
+    if choixOnglet == "principale":
+        global suite
+        Espace(0, 100)
+        print("Menu :",Couleur.Jaune +" PRINCIPAL" + Couleur.Normal)
+        print("Ordinateur (o)")
+        print("Calculs (c)")
+        print("Competences (l)")
+        while suite == 0:
+            try:
+                reponse = str(input("Aller dans l'onglet : "))
+                if reponse == str(reponse):
+                    if str(reponse) == "o":
+                        suite = 1
+                        choixOnglet = "ordinateur"
+                    
+                    elif str(reponse) == "c":
+                        suite = 1
+                        choixOnglet = "calcul"
 
-                elif str(reponse) == "l":
-                    suite = 1
-                    choixOnglet = "competence"                    
+                    elif str(reponse) == "l":
+                        suite = 1
+                        choixOnglet = "competence"                    
+            except SyntaxError:
+                ...
+
+def Calcule():
+    if choixOnglet == "calcul":
+        gain = 0
+        while gain != 300:
+            global cagnotte
+            nbCalculeOK = 0
+            nombre1 = random.choice(listeCalcule)
+            nombre2 = random.choice(listeCalcule)
+            print(nombre1, "+", nombre2)
+            reponseOrdinateur = nombre1 + nombre2
+            while nbCalculeOK == 0:
+                try:
+                    reponse = int(input("Reponse = "))
+                    if reponse == int(reponse):
+                        nbCalculeOK = 1
+                        gain += 50
+                except ValueError:
+                    ...
+            if int(reponse) == reponseOrdinateur:
+                print(Couleur.Vert + "Juste, vous gagner 50€." + Couleur.Normal)
+                cagnotte += 50
+                Espace(3, 100)
+                AfficheCagnotte()
+                Espace(3, 100)
+            elif int(reponse) != reponseOrdinateur:
+                print(Couleur.Rouge + "Faux, vous ne gagnez rien." + Couleur.Normal)
+                Espace(3, 100)
+                AfficheCagnotte()
+                Espace(3, 100)
+
+
+def Competence():   
+    if choixOnglet == "competence":    
+        print("Menu",Couleur.Jaune + "COMPETENCE" + Couleur.Normal)
+        print("Calculer Lvl",Calculator)
+        print("Mineur Lvl", Mineur)
+        print("Constructeur Lvl", Constructeur)
+        print("Programmeur Lvl", Programmeur)
+
+
+def Ordinateur():
+    if choixOnglet == "ordinateur":
+        print("Menu", Couleur.Jaune + "Ordinateur")
+        print("BTC (b)")
+        print("Acheter objet (a)")
+        print("Menu principal (p)")
+        print("Chercher travail (t)")
+        try:
+            while suite == 0:
+                reponse = str(input("Aller dans l'onglet : "))
+                if reponse == str(reponse):
+                    if str(reponse) == "b":
+                        onglet = "btc"
+                        suite = 1
+
+                    elif str(reponse) == "a":
+                        onglet = "shopObjet"
+                        suite = 1
+
+                    elif str(reponse) == "p":
+                        onglet = "principal"
+                        suite = 1                    
+
+                    elif str(reponse) == "t":
+                        onglet = "chercherTravail"
+                        suite = 1
         except SyntaxError:
             ...
 
-def Calcule():
-    gain = 0
-    while gain != 300:
-        global cagnotte
-        nbCalculeOK = 0
-        nombre1 = random.choice(listeCalcule)
-        nombre2 = random.choice(listeCalcule)
-        print(nombre1, "+", nombre2)
-        reponseOrdinateur = nombre1 + nombre2
-        while nbCalculeOK == 0:
-            try:
-                reponse = int(input("Reponse = "))
-                if reponse == int(reponse):
-                    nbCalculeOK = 1
-                    gain += 50
-            except ValueError:
-                ...
-        if int(reponse) == reponseOrdinateur:
-            print(Couleur.Vert + "Juste, vous gagner 50€." + Couleur.Normal)
-            cagnotte += 50
-            Espace(3, 100)
-            AfficheCagnotte()
-            Espace(3, 100)
-        elif int(reponse) != reponseOrdinateur:
-            print(Couleur.Rouge + "Faux, vous ne gagnez rien." + Couleur.Normal)
-            Espace(3, 100)
-            AfficheCagnotte()
-            Espace(3, 100)
 
+def BTC():
+    if choixOnglet == "btc":
+        print("Menu", Couleur.Jaune + "BTC")
+        print("Miner BTC (m)")
+        print("Acheter BTC (a)")
+        try:
+            while suite == 0:
+                reponse = str(input("Aller dans l'onglet : "))
+                if reponse == (str(reponse)):
+                    if str(reponse) == "m":
+                        choixOnglet = "miner BTC"
+                        suite = 1
+                    elif str(reponse) == "a":
+                        choixOnglet = "acheter BTC"
+                        suite = 1
 
-
-
+        except SyntaxError:
+            ...
 # Pour animation du debut
 
 Debut = 0
