@@ -65,9 +65,9 @@ def PuissantOrdinateur():
 # Creation fonctions des menus
 def MenuPrincipal():
     if choixOnglet == "principale":
+        suite = 0
         Espace(0, 100)
         global suite
-        Espace(0, 100)
         print("Menu :",Couleur.Jaune +" PRINCIPAL" + Couleur.Normal)
         print("Ordinateur (o)")
         print("Calculs (c)")
@@ -89,10 +89,11 @@ def MenuPrincipal():
                         choixOnglet = "competence"                    
             except SyntaxError:
                 ...
-    suite = 0
+
 
 def Calcule():
     if choixOnglet == "calcul":
+        suite = 0
         Espace(0, 100)
         gain = 0
         while gain != 300:
@@ -121,22 +122,33 @@ def Calcule():
                 Espace(2, 100)
                 AfficheCagnotte()
                 Espace(2, 100)
-    suite = 0
+    choixOnglet = "principale"
 
 
 def Competence(): 
-    if choixOnglet == "competence":    
+    if choixOnglet == "competence":   
+        suite = 0 
         Espace(0, 100)
         print("Menu",Couleur.Jaune + "COMPETENCE" + Couleur.Normal)
         print("Calculer Lvl",Calculator)
         print("Mineur Lvl", Mineur)
         print("Constructeur Lvl", Constructeur)
         print("Programmeur Lvl", Programmeur)
-        Suite = 0
+        print("Principal (p)")
+        try:
+            while suite == 0:
+                reponse = str(input("Allez dans l'onglet : "))
+                if reponse == str(reponse):
+                    if str(reponse) == "p":
+                        choixOnglet = "principale"
+                        suite = 1
+        except SyntaxError:
+            ...
 
 
 def Ordinateur():
     if choixOnglet == "ordinateur":
+        suite = 0
         Espace(0, 100)
         print("Menu", Couleur.Jaune + "Ordinateur")
         print("BTC (b)")
@@ -156,7 +168,7 @@ def Ordinateur():
                         suite = 1
 
                     elif str(reponse) == "p":
-                        onglet = "principal"
+                        onglet = "principale"
                         suite = 1                    
 
                     elif str(reponse) == "t":
@@ -164,14 +176,17 @@ def Ordinateur():
                         suite = 1
         except SyntaxError:
             ...
-    suite = 0
+
+
 
 def BTC():
     if choixOnglet == "btc":
+        suite = 0
         Espace(0, 100)
         print("Menu", Couleur.Jaune + "BTC")
         print("Miner BTC (m)")
         print("Acheter BTC (a)")
+        print("Principale (p)")
         try:
             while suite == 0:
                 reponse = str(input("Aller dans l'onglet : "))
@@ -182,13 +197,17 @@ def BTC():
                     elif str(reponse) == "a":
                         choixOnglet = "acheter BTC"
                         suite = 1
+                    elif str(reponse) == "p":
+                        choixOnglet = "principale"
+                        suite = 1
 
         except SyntaxError:
             ...
-    suite = 0
+
 
 def minerBTC():
     if choixOnglet == "miner BTC": 
+        suite = 0 
         Espace(0, 100)
         print("Minage en cours...")
         Espace(4, 100)
@@ -196,10 +215,13 @@ def minerBTC():
         cagnotte += 16
         Espace(2, 100)
         AfficheCagnotte()
-    suite = 0
+        time.sleep(2)
+        choixOnglet = "principale"
+
 
 def AcheterBTC():
     if choixOnglet == "acheter BTC": 
+        suite = 0
         Espace(0, 100)
         try:
             while suite == 0:
@@ -211,14 +233,15 @@ def AcheterBTC():
                         print("Vous avez acheter", str(reponse) + "€ de Bitcoin.")
                         AfficheCagnotte()
                         suite = 1
+                        time.sleep(2)
+                        choixOnglet = "principale"
         except ValueError:
             ...
-    suite = 0 
-
 
 
 def Shop():
     if choixOnglet == "shopObjet":
+        suite = 0
         Espace(0, 100) 
         print("Menu", Couleur.Jaune + "SHOP")
         print("Ordinateur (o)")
@@ -243,8 +266,27 @@ def Shop():
                         suite = 1
         except SyntaxError:
             ...
-    suite = 0
 
+
+def Travail():
+    suite = 0
+    if choixOnglet == "chercherTravail":
+        Espace(0, 100)
+        print("Menu", Couleur.Jaune + "CHERCHER TRAVAIL")
+        print("Travaux rapides (r)")
+        print("Travaux long (l)")
+        try:
+            while suite == 0:
+                reponse = str(input("Allez dans l'onglet : "))
+                if reponse == str(reponse):
+                    if str(reponse) == "r":
+                        choixOnglet = "travaux rapides"
+                        suite = 1
+                    elif str(reponse) == "l":
+                        choixOnglet = "travaux long"
+                        suite = 1
+        except SyntaxError:
+            ...
 
 # Pour animation du debut
 
