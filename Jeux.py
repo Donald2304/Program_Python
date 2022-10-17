@@ -1,4 +1,3 @@
-
 import time,random
 listeCalcule = list(range(-50 , 50+1))
 cagnotte = 0
@@ -29,10 +28,9 @@ def Calcule():
                 nbCalculeOK = 1
         except ValueError:
             ...
-
     if int(reponse) == reponseOrdinateur:
-        print(Couleur.Vert + "Juste, vous gagner 500€." + Couleur.Normal)
-        cagnotte += 500
+        print(Couleur.Vert + "Juste, vous gagner 50€." + Couleur.Normal)
+        cagnotte += 50
         Espace(3, 100)
         AfficheCagnotte()
         Espace(3, 100)
@@ -41,7 +39,27 @@ def Calcule():
         Espace(3, 100)
         AfficheCagnotte()
         Espace(3, 100)
-    
+
+def PremiereOrdinateur():
+    print("Prix : 150€")
+    print("")
+    print(Couleur.Gris +"   __|\____      ___")
+    print(              "  |  144p  |    |   |")
+    print(              " /|________|\   |   |")
+    print(              "/___|    |___\  |___|")
+    print(              "   _______ ")
+    print(              "  |_______| 0 ")
+
+def PuissantOrdinateur():
+    print(Couleur.Bleu + " _________")
+    print(               "|", Couleur.Violet + "1080p8K", Couleur.Bleu +"|")
+    print(               "|_________|" + Couleur.Normal)
+
+    print(Couleur.Rouge + "              _")
+    print(Couleur.Vert +  "   ____     ", Couleur.Rouge + "| |")
+    print(Couleur.Vert +  "  |____| 0  ", Couleur.Rouge + "|_|")
+
+
 class Couleur:
     Bleu = '\033[94m' 
     Rouge = '\033[91m' 
@@ -231,10 +249,28 @@ else:
 
 # Jeux
 nbQuestion = 0
-while cagnotte < 2000:
+while cagnotte < 300:
     Calcule()
     nbQuestion += 1
 
 
+# Achat premiere ordinateur
 
+Espace(3, 100)
+print("Maintenant que tu as un peu d'argent, allons acheter ton premier ordinateur.")
+Espace(6, 100)
+PremiereOrdinateur()
+print("")
+while cagnotte != 150:
+    try:
+        reponse = str(input(Couleur.Normal + "Appuie sur a pour l'acheter : "))
+        if reponse == str(reponse):
+            if str(reponse) == "a":
+                cagnotte -= 150
+                Espace(0, 100)
+                print("Tu as recupere (ordinateur ancien)")
+                Espace(3, 100)
+                AfficheCagnotte()
+    except SyntaxError:
+        ...
 
