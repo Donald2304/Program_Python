@@ -307,6 +307,79 @@ def Travail():
         except SyntaxError:
             ...
 
+
+def AcheterOrdinateur():
+    global cagnotte, suite
+    print("Menu", Couleur.Jaune + "Acheter Ordinateur :" + Couleur.Normal)
+    print("")
+    print("Ordinateur Surpuissant:")
+    PuissantOrdinateur()
+    print(Couleur.Normal + "Acheter Ordinateur Surpuissant (s)")
+    print("")
+    print(Couleur.Normal + "Ordinateur Moyens :")
+    PCmoyens()
+    print(Couleur. Normal + "Acheter Ordinateur Moyens (m)")
+    print("")
+    PCportable()
+    print(Couleur.Normal + "Acheter Ordinateur Portable (l)" + Couleur.Normal)
+    print("")
+    print("Principal (p)")
+    print("")
+    try:
+        while suite == 0:
+            reponse = str(input("Aller dans l'onglet : "))
+            if reponse == str(reponse):
+                if str(reponse) == "s":
+                    if cagnotte >= 11000:
+                        cagnotte -= 11000
+                        Espace(0, 100)
+                        print("Vous avez recu (Ordinateur Surpuissant)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        suite = 1
+                        choixOnglet = "principale"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cet ordinateur.")
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"  
+
+                elif str(reponse) == "m":
+                    if cagnotte >= 1500:
+                        cagnotte -= 1500
+                        Espace(0, 100)
+                        print("Vous avez recu (Ordinateur Moyens)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        suite = 1
+                        choixOnglet = "principale"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cet ordinateur.")
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"  
+
+                elif str(reponse) == "l":
+                    if cagnotte >= 6000:
+                        cagnotte -= 6000
+                        Espace(0, 100)
+                        print("Vous avez recu (Ordinateur Portable)")
+                        Espace(2, 100)
+                        AfficheCagnotte()   
+                        suite = 1
+                        choixOnglet = "principale"                   
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cet ordinateur." + Couleur.Normal)
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                
+                elif str(reponse) == "p":
+                    suite = 1
+                    choixOnglet = "principale"
+    except SyntaxError:
+        ...
+
 # Pour animation du debut
 
 Debut = 0
