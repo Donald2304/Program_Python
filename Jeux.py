@@ -451,7 +451,71 @@ def AcheterMaison():
         while suite == 0:
             reponse = str(input("Aller dans l'onglet : "))
             if reponse == str(reponse):
+                Espace(0, 100)
                 if str(reponse) == "b":
+                    if cagnotte >= 150:
+                        print("Vous avez recu (cabane de bois)")
+                        cagnotte -= 150
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+
+                elif str(reponse) == "m":
+                    if cagnotte >= 15000:
+                        print("Vous avez recu (Petite maison)")
+                        cagnotte -= 15000
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                
+                elif str(reponse) == "g":
+                    if cagnotte >= 95000:
+                        cagnotte -= 95000
+                        print("Vous avez recu (Grande Maison)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                
+                elif str(reponse) == "l":
+                    if cagnotte >= 200000:
+                        cagnotte -= 200000
+                        print("Vous avez recu (Maison de luxe)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "principale"
+                elif str(reponse) == "p":
+                    choixOnglet = "principale"
+                    suite = 1
+    except SyntaxError:
+        ...
 # Pour animation du debut
 
 Debut = 0
