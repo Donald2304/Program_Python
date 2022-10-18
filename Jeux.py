@@ -382,7 +382,6 @@ def AcheterOrdinateur():
 
 
 def CabaneBois():
-    print("Prix : 150€")
     print(Couleur.Vert + " __________")
     print(               " |   __   |")
     print(               " |  |  |  |")
@@ -390,8 +389,6 @@ def CabaneBois():
 
 
 def PetiteMaison():
-    print("Prix : 5000€")
-
     print(Couleur.Gris + "  ________")
     print(               " /        \ " )
     print(               "/__________\ ")
@@ -401,7 +398,6 @@ def PetiteMaison():
 
 
 def GrandeMaison():
-    print("Prix : 95000€")
     print("                      O")
     print("    _________________   O")
     print("   /                 \ | |")
@@ -417,7 +413,6 @@ def GrandeMaison():
 
 
 def MaisonDeLuxe():
-    print("Prix : 200000€")
     print("                      O")
     print("    _________________   O")
     print("   /                 \ | |")
@@ -430,6 +425,33 @@ def MaisonDeLuxe():
     print(" |         __          |      __      |")
     print(" |        |  |         |     |  |     |")
     print(" |________|__|_________|_____|__|_____|")
+
+def AcheterMaison():
+    suite = 0
+    print("Menu", Couleur.Jaune + "ACHETER MAISON")
+    print("")
+    print(Couleur.Normal + "Prix :", Couleur.Jaune + "150€")
+    CabaneBois()
+    print("Acheter cabane de bois (b)")
+    print("")
+    print(Couleur.Normal + "Prix :", Couleur.Jaune + "15.000€")
+    PetiteMaison()
+    print("Acheter petite maison (m)")
+    print("")
+    print("Prix :", Couleur.Jaune + "95.000€" + Couleur.Normal)
+    GrandeMaison()
+    print("Acheter Grande maison (g)")
+    print("")
+    print("Prix :", Couleur.Jaune + "200.000€" + Couleur.Normal)
+    MaisonDeLuxe()
+    print("Acheter Maison de luxe (l)")
+    print("")
+    print("Principal (p)")
+    try:
+        while suite == 0:
+            reponse = str(input("Aller dans l'onglet : "))
+            if reponse == str(reponse):
+                if str(reponse) == "b":
 # Pour animation du debut
 
 Debut = 0
