@@ -51,6 +51,7 @@ def PremiereOrdinateur():
     print(              "   _______ ")
     print(              "  |_______| 0 ")
 
+
 def PuissantOrdinateur():
     print(Couleur.Bleu + " _________")
     print(               "|", Couleur.Violet + "1080p8K", Couleur.Bleu +"|")
@@ -61,6 +62,20 @@ def PuissantOrdinateur():
     print(Couleur.Vert +  "  |____| 0  ", Couleur.Rouge + "|_|")
 
 
+def PCmoyens():
+    print("Prix : 1500€")
+    print(Couleur.Bleu + "_______")
+    print("|_____|")
+    print("  ___")
+    print(" |___| 0")
+
+
+def PCportable():
+    print("Prix : 6000€")
+    print(Couleur.Jaune + " ____")
+    print("|____|")
+    print(" |__| 0")
+    print(" ")
 
 # Creation fonctions des menus
 def MenuPrincipal():
@@ -248,6 +263,7 @@ def Shop():
         print("Maison (m)")
         print("Voiture (v)")
         print("Bateau (b)")
+        print("Principal (p)")
         try:
             while suite == 0:
                 reponse = str(input("Aller dans l'onglet : "))
@@ -263,6 +279,9 @@ def Shop():
                         suite = 1
                     elif str(reponse) == "b":
                         choixOnglet = "bateau"
+                        suite = 1
+                    elif str(reponse) == "p":
+                        choixOnglet = "principale"
                         suite = 1
         except SyntaxError:
             ...
