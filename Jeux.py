@@ -380,6 +380,41 @@ def AcheterOrdinateur():
     except SyntaxError:
         ...
 
+
+def CabaneBois():
+    print("Prix : 150€")
+    print(Couleur.Vert + " __________")
+    print(               " |   __   |")
+    print(               " |  |  |  |")
+    print(               " |__|__|__|" + Couleur.Normal)
+
+
+def PetiteMaison():
+    print("Prix : 5000€")
+
+    print(Couleur.Gris + "  ________")
+    print(               " /        \ " )
+    print(               "/__________\ ")
+    print(               " |   __   |")
+    print(               " |  |  |  |")
+    print(               " |__|__|__|" + Couleur.Normal)
+
+
+def GrandeMaison():
+    print("Prix : 95000€")
+    print("                      O")
+    print("    _________________   O")
+    print("   /                 \ | |")
+    print("  /                   \| |")
+    print(" /                     \_|        " )
+    print("/_______________________\ ")
+    print(" |   _____     _____   |")
+    print(" |  |__|__|   |__|__|  |")
+    print(" |  |__|__|   |__|__|  |")
+    print(" |         __          |")
+    print(" |        |  |         |")
+    print(" |________|__|_________|")
+
 # Pour animation du debut
 
 Debut = 0
