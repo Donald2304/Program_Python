@@ -415,6 +415,21 @@ def GrandeMaison():
     print(" |        |  |         |")
     print(" |________|__|_________|")
 
+
+def MaisonDeLuxe():
+    print("Prix : 200000€")
+    print("                      O")
+    print("    _________________   O")
+    print("   /                 \ | |")
+    print("  /                   \| |")
+    print(" /                     \_|_________" )
+    print("/_______________________\ /        \ ")
+    print(" |   _____     _____   | /          \  ")
+    print(" |  |__|__|   |__|__|  |/____________\ ")
+    print(" |  |__|__|   |__|__|  |              |")
+    print(" |         __          |      __      |")
+    print(" |        |  |         |     |  |     |")
+    print(" |________|__|_________|_____|__|_____|")
 # Pour animation du debut
 
 Debut = 0
