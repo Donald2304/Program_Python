@@ -427,6 +427,7 @@ def MaisonDeLuxe():
     print(" |________|__|_________|_____|__|_____|")
 
 def AcheterMaison():
+    global cagnotte
     suite = 0
     print("Menu", Couleur.Jaune + "ACHETER MAISON")
     print("")
@@ -451,7 +452,6 @@ def AcheterMaison():
         while suite == 0:
             reponse = str(input("Aller dans l'onglet : "))
             if reponse == str(reponse):
-                Espace(0, 100)
                 if str(reponse) == "b":
                     if cagnotte >= 150:
                         print("Vous avez recu (cabane de bois)")
@@ -463,7 +463,7 @@ def AcheterMaison():
                         choixOnglet = "principale"
                     else:
                         print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
-                        Espace(2, 100)
+                        time.sleep(2)
                         suite = 1
                         choixOnglet = "principale"
 
@@ -478,7 +478,7 @@ def AcheterMaison():
                         choixOnglet = "principale"
                     else:
                         print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
-                        Espace(2, 100)
+                        time.sleep(2)
                         suite = 1
                         choixOnglet = "principale"
                 
@@ -493,7 +493,7 @@ def AcheterMaison():
                         choixOnglet = "principale"
                     else:
                         print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
-                        Espace(2, 100)
+                        time.sleep(2)
                         suite = 1
                         choixOnglet = "principale"
                 
@@ -508,14 +508,16 @@ def AcheterMaison():
                         choixOnglet = "principale"
                     else:
                         print(Couleur.Rouge + "Vous n'avez pas assez d'argent pour acheter cette maison")
-                        Espace(2, 100)
+                        time.sleep(2)
                         suite = 1
                         choixOnglet = "principale"
                 elif str(reponse) == "p":
                     choixOnglet = "principale"
                     suite = 1
+
     except SyntaxError:
         ...
+    
 # Pour animation du debut
 
 Debut = 0
