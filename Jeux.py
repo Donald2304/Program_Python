@@ -42,7 +42,6 @@ def AfficheCagnotte():
 
 
 def PremiereOrdinateur():
-    print("Prix : 150€")
     print("")
     print(Couleur.Gris +"   __|\____      ___")
     print(              "  |  144p  |    |   |")
@@ -63,7 +62,6 @@ def PuissantOrdinateur():
 
 
 def PCmoyens():
-    print("Prix : 1500€")
     print(Couleur.Bleu + "_______")
     print("|_____|")
     print("  ___")
@@ -71,7 +69,6 @@ def PCmoyens():
 
 
 def PCportable():
-    print("Prix : 6000€")
     print(Couleur.Jaune + " ____")
     print("|____|")
     print(" |__| 0")
@@ -314,13 +311,16 @@ def AcheterOrdinateur():
     print("Menu", Couleur.Jaune + "Acheter Ordinateur :" + Couleur.Normal)
     print("")
     print("Ordinateur Surpuissant:")
+    print("Prix :", couleur.Jaune + "11000")
     PuissantOrdinateur()
     print(Couleur.Normal + "Acheter Ordinateur Surpuissant (s)")
     print("")
     print(Couleur.Normal + "Ordinateur Moyens :")
+    print("Prix :", couleur.Jaune + "1500")    
     PCmoyens()
     print(Couleur. Normal + "Acheter Ordinateur Moyens (m)")
     print("")
+    print("Prix :", couleur.Jaune + "6000")
     PCportable()
     print(Couleur.Normal + "Acheter Ordinateur Portable (l)" + Couleur.Normal)
     print("")
@@ -648,6 +648,19 @@ def TravauxRapides():
         Espace(10, 100)
         print("Vous avez gagné 150 euros")
         cagnotte += 150
+        Espace(2, 100)
+        AfficheCagnotte()
+
+
+choixOnglet = "travaux rapides"
+def TravauxLong():
+    global cagnotte
+    if choixOnglet == "travaux rapides":
+        Espace(0, 100)
+        print("Debut travaux rapides (20s)")
+        Espace(20, 100)
+        print("Vous avez gagné 400 euros")
+        cagnotte += 400
         Espace(2, 100)
         AfficheCagnotte()
 
