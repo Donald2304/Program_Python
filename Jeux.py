@@ -542,6 +542,103 @@ def Train():
     print(               "---    - -- -----  |____________________\ ")
 
 
+def AcheterVoiture():
+    global cagnotte
+    suite = 0
+    print("Menu",Couleur.Jaune + "Acheter Voiture" + Couleur.Normal)
+    print("")
+    print("Prix :", Couleur.Jaune + "7.000€" + Couleur.Normal)
+    VoitureNul()
+    print("Acheter Voiture Nul (n)")
+    print("")
+    print("Prix :", Couleur.Jaune + "15.000€" + Couleur.Normal)
+    VoiturePetite()
+    print("Acheter Petite Voiture (l)")
+    print("")
+    print("Prix :", Couleur.Jaune + "27.000€" + Couleur.Normal)
+    Fourgons()
+    print("Acheter Fourgons (f)")
+    print("")
+    print("Prix :", Couleur.Jaune + "160.000€" + Couleur.Normal)
+    Train()
+    print(Couleur.Normal + "Acheter Train (t)")
+    print("")
+    print(Couleur.Normal + "Principale (p)")
+    try:
+        while suite == 0:
+            reponse = str(input("Acheter : "))
+            if reponse == str(reponse):
+                if str(reponse) == "n":
+                    if cagnotte >= 7000:
+                        choixOnglet = "voiture nul"
+                        cagnotte -= 7000
+                        Espace(0, 100)
+                        print("Vous avez recu (voiture nul)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+
+                if str(reponse) == "l":
+                    if cagnotte >= 15000:
+                        choixOnglet = "voiture nul"
+                        cagnotte -= 15000
+                        Espace(0, 100)
+                        print("Vous avez recu (Petite Voiture)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                
+                if str(reponse) == "f":
+                    if cagnotte >= 27000:
+                        choixOnglet = "voiture nul"
+                        cagnotte -= 27000
+                        Espace(0, 100)
+                        print("Vous avez recu (Fourgons)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                
+                if str(reponse) == "t":
+                    if cagnotte >= 160000:
+                        choixOnglet = "voiture nul"
+                        cagnotte -= 160000
+                        Espace(0, 100)
+                        print("Vous avez recu (Train)")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent")
+                        Espace(2, 100)
+                        choixOnglet = "principale"    
+                        suite = 1
+    except SyntaxError:
+        ...
+
+        
 # Pour animation du debut
 
 Debut = 0
