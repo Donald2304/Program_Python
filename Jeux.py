@@ -79,10 +79,10 @@ def PCportable():
 
 # Creation fonctions des menus
 def MenuPrincipal():
+    global suite
     if choixOnglet == "principale":
         suite = 0
         Espace(0, 100)
-        global suite
         print("Menu :",Couleur.Jaune +" PRINCIPAL" + Couleur.Normal)
         print("Ordinateur (o)")
         print("Calculs (c)")
@@ -107,6 +107,7 @@ def MenuPrincipal():
 
 
 def Calcule():
+    global choixOnglet
     if choixOnglet == "calcul":
         suite = 0
         Espace(0, 100)
@@ -638,7 +639,18 @@ def AcheterVoiture():
     except SyntaxError:
         ...
 
-        
+
+def TravauxRapides():
+    global cagnotte
+    if choixOnglet == "travaux rapides":
+        Espace(0, 100)
+        print("Debut travaux rapides (10s)")
+        Espace(10, 100)
+        print("Vous avez gagné 150 euros")
+        cagnotte += 150
+        Espace(2, 100)
+        AfficheCagnotte()
+
 # Pour animation du debut
 
 Debut = 0
@@ -811,6 +823,7 @@ else:
 
 # Jeux
 nbQuestion = 0
+choixOnglet = "calcul"
 while cagnotte < 300:
     Calcule()
     nbQuestion += 1
