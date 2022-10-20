@@ -664,6 +664,48 @@ def TravauxLong():
         Espace(2, 100)
         AfficheCagnotte()
 
+
+def PetitBatiment():
+    print(Couleur.Gris + "_________")
+    print(               "| || || |")
+    print(               "| || || |")
+    print(               "|_______|")
+
+
+def BatimentMoyens():
+    print("_______________")
+    print("| || || || || |")
+    print("| || || || || |")
+    print("| || || || || |")
+    print("| || || || || |")
+    print("|_____________|")
+
+
+def BatimentGrand():
+    print("_____________________")
+    print("| || || || || || || |")
+    print("| || || || || || || |")
+    print("| || || || || || || |")
+    print("| || || || || || || |")
+    print("|___________________|")
+
+
+def BatimentLuxe():
+    print(Couleur.Bleu + "_____________________")
+    print(               "|                   |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "| || || || || || || |")
+    print(               "|                   |")
+    print(               "|        ____       |")
+    print(               "|       |    |      |")
+    print(               "|_______|____|______|")
 # Pour animation du debut
 
 Debut = 0
@@ -861,3 +903,4 @@ while cagnotte != 150:
                 AfficheCagnotte()
     except SyntaxError:
         ...
+
