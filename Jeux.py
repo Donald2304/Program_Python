@@ -861,4 +861,3 @@ while cagnotte != 150:
                 AfficheCagnotte()
     except SyntaxError:
         ...
-
