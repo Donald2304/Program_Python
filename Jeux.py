@@ -691,21 +691,21 @@ def BatimentGrand():
 
 
 def BatimentLuxe():
-    print(Couleur.Bleu + "_____________________")
-    print(               "|                   |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "| || || || || || || |")
-    print(               "|                   |")
-    print(               "|        ____       |")
-    print(               "|       |    |      |")
-    print(               "|_______|____|______|")
+    print(Couleur.Bleu +  "________________________")
+    print(Couleur.Jaune + "|                      |")
+    print(Couleur.Rouge + "|                      |")
+    print(Couleur.Vert +  "|                      |")
+    print(Couleur.Bleu +  "|                      |")
+    print(Couleur.Jaune + "|                      |")
+    print(Couleur.Rouge + "|                      |")
+    print(Couleur.Vert +  "|                      |")
+    print(Couleur.Bleu +  "|                      |")
+    print(Couleur.Jaune + "|                      |")
+    print(Couleur.Rouge + "|                      |")
+    print(Couleur.Vert +  "|                      |")
+    print(Couleur.Bleu +  "|         ____         |")
+    print(Couleur.Jaune + "|        " + Couleur.Bleu +  "|    |"+ Couleur.Jaune + "        |")
+    print(Couleur.Rouge  + "|________" +  Couleur.Bleu + "|____|" + Couleur.Rouge + "________|")
 # Pour animation du debut
 
 Debut = 0
