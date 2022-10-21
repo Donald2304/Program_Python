@@ -168,24 +168,28 @@ def Ordinateur():
         print("Acheter objet (a)")
         print("Menu principal (p)")
         print("Chercher travail (t)")
+        print("Creer Entreprise (e)")
         try:
             while suite == 0:
                 reponse = str(input("Aller dans l'onglet : "))
                 if reponse == str(reponse):
                     if str(reponse) == "b":
-                        onglet = "btc"
+                        choixOnglet = "btc"
                         suite = 1
 
                     elif str(reponse) == "a":
-                        onglet = "shopObjet"
+                        choixOnglet = "shopObjet"
                         suite = 1
 
                     elif str(reponse) == "p":
-                        onglet = "principale"
+                        choixOnglet = "principale"
                         suite = 1                    
 
                     elif str(reponse) == "t":
                         onglet = "chercherTravail"
+                        suite = 1
+                    elif str(reponse) == "e":
+                        choixOnglet = "entreprise"
                         suite = 1
         except SyntaxError:
             ...
@@ -706,6 +710,101 @@ def BatimentLuxe():
     print(Couleur.Bleu +  "|         ____         |")    
     print(Couleur.Jaune + "|        " + Couleur.Bleu +  "|    |"+ Couleur.Jaune + "        |")
     print(Couleur.Rouge  +"|________" +  Couleur.Bleu + "|____|" + Couleur.Rouge + "________|") 
+
+
+def CreerEntreprise():
+    global choixOnglet, cagnotte
+    if choixOnglet == "entreprise" :
+        suite = 0
+        print("Menu", Couleur.Jaune + "Creer votre entreprise" + Couleur.Normal)
+        print("Choix Batiment : ")
+        print('')
+        print("Prix", Couleur.Jaune + "30.000€" + Couleur.Normal)
+        PetitBatiment()
+        print(Couleur.Normal + "Acheter Petit Batiment (n)")
+        print('')
+        print(Couleur.Normal + "Prix", Couleur.Jaune + "70.000€" + Couleur.Normal)
+        BatimentMoyens()
+        print("Acheter Batiment Moyens (m)")
+        print("")
+        print(Couleur.Normal + "Prix", Couleur.Jaune + "115.000€" + Couleur.Normal)
+        BatimentGrand()
+        print("Acheter Batiment Grand (g) ")
+        print('')
+        print(Couleur.Normal + "Prix", Couleur.Jaune + "70.000€" + Couleur.Normal)
+        BatimentLuxe()
+        print(Couleur.Normal + "Acheter Batiment de luxe (l)")
+        print('')
+        print("Principale (p)")
+        try:
+            while suite == 0:
+                reponse = str(input("Choix Batiment : "))
+                if str(reponse) == "n":
+                    if cagnotte >= 30000:
+                        cagnotte -= 30000
+                        print("Vous avez recu Petit Batiment")
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "nbEmployés"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent.")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                    
+                elif str(reponse) == "m":
+                    if cagnotte >= 70000:
+                        print("Vous avez recu Batiment moyens")
+                        cagnotte -= 70000
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "nbEmployés"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent.")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+               
+                elif str(reponse) == "g":
+                    if cagnotte >= 115000:
+                        print("Vous avez recu Batiment Grand")
+                        cagnotte -= 115000
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "nbEmployés"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent.")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+
+                elif str(reponse) == "l":
+                    if cagnotte >= 300000:
+                        print("Vous avez recu Batiment de Luxe")
+                        cagnotte -= 300000
+                        Espace(2, 100)
+                        AfficheCagnotte()
+                        Espace(2, 100)
+                        suite = 1
+                        choixOnglet = "nbEmployés"
+                    else:
+                        print(Couleur.Rouge + "Vous n'avez pas assez d'argent.")
+                        Espace(2, 100)
+                        choixOnglet = "principale"
+                        suite = 1
+                    
+                elif str(reponse) == "p":
+                    Espace(0, 100)
+                    choixOnglet = "principale"
+                    suite = 1
+        except SyntaxError:
+            ...
 # Pour animation du debut
 
 Debut = 0
